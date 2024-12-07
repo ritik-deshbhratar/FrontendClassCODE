@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Using Form</title>
+    <link rel="stylesheet" href="../CSS/Formin.css" />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="container-fluid">
+    <div class="mt-2">
+      <button
+        data-bs-target="#register"
+        data-bs-toggle="modal"
+        class="btn btn-primary"
+      >
+        Register Product
+      </button>
+      <div
+        class="modal fade"
+        id="register"
+        tabindex="-1"
+        aria-labelledby="registerLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 id="registerLabel">Register New Product</h3>
+              <button
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-2">
+                  <label for="ProductName" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="ProductName" />
+                </div>
+                <div class="mb-2">
+                  <label for="ProductPrice" class="form-label">Price</label>
+                  <input type="text" class="form-control" id="ProductPrice" />
+                </div>
+                <div class="mb-2">
+                  <label for="ProductShippedTo" class="form-label"
+                    >Shipped to</label
+                  >
+                  <select class="form-select" id="ProductShippedTo">
+                    <option>Delhi</option>
+                    <option>Hyderabad</option>
+                    <option>Pune</option>
+                    <option>Nagpur</option>
+                  </select>
+                </div>
+                <div class="mb-2">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="ProductStock"
+                    />
+                    <label for="ProductStock" class="form-check-label"
+                      >Available</label
+                    >
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    onclick="RegisterClick()"
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-dismiss="modal"
+                  >
+                    Register
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- here this deatil i dont want to see every time i want only to show whne user click register button and submitte the deatailed -->
+    <div class="mt-3" style="display: none" id="detailsContainer">
+      <h2>Product Detailes comes From form</h2>
+      <dl class="row">
+        <dt class="col-3">Name</dt>
+        <dd class="col-9" id="lblName"></dd>
+        <dt class="col-3">Price</dt>
+        <dd class="col-9" id="lblPrice"></dd>
+        <dt class="col-3">Shiped To</dt>
+        <dd class="col-9" id="lblCity"></dd>
+        <dt class="col-3">Stock</dt>
+        <dd class="col-9" id="lblStock"></dd>
+      </dl>
+    </div>
+
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../JS/FormInput.js" type="text/javascript"></script>
+  </body>
+</html>
